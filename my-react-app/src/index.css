@@ -1,0 +1,386 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #000000,  #7ED6DF); /* Gradient colors */
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 50px auto;
+  text-align: center;
+  background: rgba(186, 62, 62, 0.5); /* Dark semi-transparent container */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(43, 207, 81, 1);
+  color: rgb(7, 7, 7); /* Update text color for better contrast */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #050505;
+  color: #b610b6;
+}
+
+.app-container.dark-mode {
+  background: #1c1c21;
+  color: #ad19ca;
+}
+
+.todo-card.dark-mode {
+  background: #3e3e4e;
+  border-color: #555;
+  color: #433087;
+}
+
+.todo-card.dark-mode p {
+  color: #2c9aa6;
+}
+
+.todo-card.dark-mode .due-date {
+  color: #e91c1c;
+}
+
+.todo-card.dark-mode .edit-btn,
+.todo-card.dark-mode .delete-btn,
+.todo-card.dark-mode .save-btn,
+.todo-card.dark-mode .cancel-btn {
+  background-color: #444;
+  color: rgb(32, 160, 43);
+}
+
+.todo-card.dark-mode .edit-btn:hover {
+  background-color: #666;
+}
+
+.todo-card.dark-mode .delete-btn:hover {
+  background-color: #841313;
+}
+
+
+/* Input Styles */
+.todo-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-box {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #e04545;
+  font-size: 1rem;
+}
+
+.date-picker {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.add-btn {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}
+
+/* Search Bar */
+.search-bar {
+  width: 97%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Todo List */
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: #96dcd5;
+  border: 2px solid #db9a59;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s;
+}
+
+
+/* Priority Levels */
+.todo-card.low {
+  border-left: 5px solid #28a745;
+}
+
+.todo-card.medium {
+  border-left: 5px solid #ffc107;
+}
+
+.todo-card.high {
+  border-left: 5px solid #dc3545;
+}
+
+.todo-text {
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+.due-date {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.empty-message {
+  color: #666;
+  font-size: 1.2rem;
+}
+
+/* Buttons */
+.edit-btn,
+.delete-btn,
+.save-btn,
+.cancel-btn {
+  padding: 5px 10px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.edit-btn {
+  background-color: #6A4C93;
+  color: rgb(255, 255, 255);
+  border-radius: 18px;
+}
+
+.edit-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-btn {
+  background-color: #c76012;
+  color: white;
+  border-radius: 20px;
+}
+
+.delete-btn:hover {
+  background-color: #bb3a12;
+}
+
+.save-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+  width: 100%;
+  background: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+.progress {
+  height: 100%;
+  background: #28a73f;
+  width: 0%; /* Initial width, will be dynamically updated */
+  transition: width 0.3s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .app-container {
+    padding: 15px;
+  }
+
+  .todo-input {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input-box,
+  .date-picker,
+  .add-btn {
+    width: 100%;
+  }
+}
+
+
+
+
+/* Simplify input and button styles */
+.todo-input input,
+.todo-input select,
+.todo-input button {
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.todo-input button {
+  background: #FFFF00;
+  color: rgb(10, 10, 10);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.todo-input button:hover {
+  background: #00b315;
+}
+
+/* Style progress bar */
+.progress-bar {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent for better contrast */
+  border-radius: 10px;
+  margin: 20px 0;
+  height: 20px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: #28a745;
+  width: 0%; /* Dynamic width */
+  transition: width 0.3s ease-in-out;
+}
+
+/* Update dark mode button */
+.dark-mode-btn {
+  background: rgba(70, 63, 63, 0.517);
+  color: peachpuff;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.dark-mode-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Todo cards */
+.todo-card {
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(20, 249, 115, 0.1);
+}
+
+.todo-card p {
+  margin: 0;
+}
+
+
+.todo-card {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space out items */
+  align-items: center; /* Center items vertically */
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background: #e0f7fa; /* Background color for card */
+  border: 2px solid #ff9a9e; /* Priority border color */
+}
+
+.todo-card .todo-content {
+  flex: 1; /* Take up remaining space */
+}
+
+.todo-card .checkbox {
+  margin-left: 10px; /* Add spacing between checkbox and content */
+  transform: scale(1.2); /* Slightly increase checkbox size */
+  cursor: pointer; /* Add pointer for better UX */
+}
+
+/* Style for the "Todo App" text */
+.todo-app-title {
+  font-family: 'Poppins', sans-serif; /* Modern font */
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #ff80ff, #4facfe);
+
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+/* Style for the task text inside todo cards */
+.todo-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 650;
+  color: #a020f0; /* Purple color */
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0); /* Subtle shadow */
+}
+
+.todo-app-title {
+  font-family: 'Press Start 2P' , sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg,#1363a8 ,#a54aa5 ); /* Gradient text */
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1); /* Optional shadow */
+  margin-bottom: 20px;
+}
